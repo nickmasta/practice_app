@@ -2,9 +2,9 @@ require 'spec_helper'
 describe "Static pages" do
 	describe "Home page" do
 
-		it "should have the h1 'Practice App'" do
+		it "should have the base title" do
 			visit '/static_pages/home'
-			page.should have_selector('title', :text => "Practice App")
+			expect(page).to have_title("Ruby on Rails Tutorial Practice App")
 		end
 
 		it "should have the content 'Practice App'" do
