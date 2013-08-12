@@ -12,5 +12,19 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before do
+    @user = User.new(name: "Example User", email: "user@example.com")
+  end
+  .
+  .
+  .
+  describe "when email address is already taken" do
+    before do
+      user_with_same_email = @user.dup
+      user_with_same_email.save
+    end
+
+    it { should_not be_valid }
+  end
 end
